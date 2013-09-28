@@ -18,15 +18,26 @@ html
       ga('send', 'pageview');
     link(rel='stylesheet', href='styles/index.css')
     script(src='bower_components/jquery/jquery.js')
-    script(src='bower_components/angular/angular.js')
+    script(src='bower_components/angular/angular.min.js')
     script(src='scripts/index.js')
-  body(ng-app='sungood')
+  body(ng-app='sungood') 
     .header
       .howami 我是______，我的學習地圖：
     .main(ng-controller="BookCtrl")
-      .section
-        .article(ng-repeat="book in books | {group: INNOVATION}")
-          img(src="{{book.name | filename}}")
-        .article(ng-repeat="book in books | {group: UX}")
-        .article(ng-repeat="book in books | {group: INFORMATION DESIGN}")
-        .article(ng-repeat="book in books | {group: INTERACTION DESIGN}")
+      section
+        article
+          .book(ng-repeat="book in books | filter:{group:'INNOVATION'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+            .want(ng-click="want(book)")
+            .push(ng-click="push(book)")
+        article
+          .book(ng-repeat="book in books | filter:{group:'UX'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+            .want(ng-click="want(book)")
+            .push(ng-click="push(book)")
+        article
+          .book(ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+            .want(ng-click="want(book)")
+            .push(ng-click="push(book)")
+        article
+          .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+            .want(ng-click="want(book)")
+            .push(ng-click="push(book)")

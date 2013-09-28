@@ -1,0 +1,7 @@
+article{clear:both}
+.book{width:99px;height:122.5px;background-position:center center;background-size:cover;position:relative;float:left}
+.want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover}
+.want{top:0;background-image:url("../images/want.png");}
+.status-want .want{background-image:url("../images/want_check.png")}
+.push{top:25px;background-image:url("../images/push.png");}
+.status-push .push{background-image:url("../images/push_check.png")}

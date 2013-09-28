@@ -4,6 +4,7 @@ app.filter 'filename', () ->
   (input) -> input.toLowerCase().replace(/\W/gi,"_")
 
 app.controller "BookCtrl", ($scope) ->
+  $scope.status = undefined
   $scope.books = [
     {name:'101 Design Methods', code:'a', group:"INNOVATION", x:0, y:0}
     {name:'Communicating The New', code:'b', group:"INNOVATION", x:0, y:0}
@@ -29,6 +30,20 @@ app.controller "BookCtrl", ($scope) ->
     {name:'Brave NUI World', fullname:'Brave NUI World: Designing Natural User Interfaces for Touch and Gesture', code:'d', group:"INTERACTION DESIGN", x:0, y:0}
     {name:'UI is Communication', fullname:'UI is Communication: How to Design Intuitive, User Centered Interfaces by Focusing on Effective Communication', code:'d', group:"INTERACTION DESIGN", x:0, y:0}
   ]
+
+  $scope.want = (book) ->
+    console.log book.status
+    if book.status is 'want'
+      book.status = undefined
+    else
+      book.status = 'want'
+
+  $scope.push = (book) ->
+    console.log book.status
+    if book.status is 'push'
+      book.status = undefined
+    else
+      book.status = 'push'
 
   # (listener_width = ()->
   #   width = $(window).width() - 200 - 5

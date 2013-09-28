@@ -1,17 +1,30 @@
+article
+  clear: both
+
 .book
-  width: 595px / 5
-  height: 842px / 5
+  width: (198px / 2)
+  height: (245px / 2)
   background-position: center center
+  background-size: cover
   position: relative
+  float: left
 
 .want, .push
   position: absolute
-  width: 10px
-  height: 10px
-  left: -5px
+  width: 20px
+  height: 20px
+  left: -10px
+  background-position: center center
+  background-size: cover
 
 .want
   top: 0px
+  background-image: url('../images/want.png')
+  .status-want &
+    background-image: url('../images/want_check.png')
 
 .push
-  top: 15px
+  top: 25px
+  background-image: url('../images/push.png')
+  .status-push &
+    background-image: url('../images/push_check.png')

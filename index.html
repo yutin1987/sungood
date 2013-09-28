@@ -20,15 +20,40 @@
     </script>
     <link rel="stylesheet" href="styles/index.css">
     <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
     <script src="scripts/index.js"></script>
   </head>
-  <body ng-app="sungood">
+  <body ng-app="sungood"> 
     <div class="header">
-      <div class="howami">我是______，這是我的學習地圖：</div>
+      <div class="howami">我是______，我的學習地圖：</div>
     </div>
-    <div class="section">
-      <div ng-repeat="book in books" class="article"></div>
+    <div ng-controller="BookCtrl" class="main">
+      <section>
+        <article>
+          <div ng-repeat="book in books | filter:{group:'INNOVATION'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
+            <div ng-click="want(book)" class="want"></div>
+            <div ng-click="push(book)" class="push"></div>
+          </div>
+        </article>
+        <article>
+          <div ng-repeat="book in books | filter:{group:'UX'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
+            <div ng-click="want(book)" class="want"></div>
+            <div ng-click="push(book)" class="push"></div>
+          </div>
+        </article>
+        <article>
+          <div ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
+            <div ng-click="want(book)" class="want"></div>
+            <div ng-click="push(book)" class="push"></div>
+          </div>
+        </article>
+        <article>
+          <div ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
+            <div ng-click="want(book)" class="want"></div>
+            <div ng-click="push(book)" class="push"></div>
+          </div>
+        </article>
+      </section>
     </div>
   </body>
 </html>
