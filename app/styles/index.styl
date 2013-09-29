@@ -1,13 +1,48 @@
+body
+  margin: 0px
+  padding: 0px
+  background: #CCCCCC
+
 article
-  clear: both
+  position: absolute
+
+book_width=198px*2/5
+book_heihgt=245px*2/5
+
+main_width=800px
+
+.container
+  width: main_width
+  margin: 0 auto
+  position: relative
+  background: #FFF
+
+.howami
+  font-size: 86px
+
+.line-top
+  position: relative
+  .left, .right
+    width: 50%
+    height: 100%
+    position: absolute
+    top: 0px
+    border-top: 1px solid #000
+  .left
+    left: 0px
+    border-right: 1px solid #000
+  .right
+    right: 0px
+    border-left: 1px solid #000
 
 .book
-  width: (198px / 2)
-  height: (245px / 2)
+  width: book_width
+  height: book_heihgt
   background-position: center center
   background-size: cover
-  position: relative
-  float: left
+  position: absolute
+  left:0px
+  top:0px
 
 .want, .push
   position: absolute
@@ -18,13 +53,115 @@ article
   background-size: cover
 
 .want
-  top: 0px
+  top: 5px
   background-image: url('../images/want.png')
   .status-want &
     background-image: url('../images/want_check.png')
 
 .push
-  top: 25px
+  top: 30px
   background-image: url('../images/push.png')
   .status-push &
     background-image: url('../images/push_check.png')
+
+.subject
+  padding: 5px 0px 0px 5px
+  color: #FFF
+  font-size: 20px
+
+.main .container
+  height: 1000px
+
+#innovation
+  width: book_width * 3 + 40px * 2 + 30px + 26px
+  height: book_heihgt + 40px
+  background: #2ECC71
+  top: 10px
+  left: 10px
+  .book
+    top: 30px
+    &:nth-child(1)
+      left: 30px
+    &:nth-child(2)
+      left: 30px + 40px + book_width
+    &:nth-child(3)
+      left: 30px + (40px + book_width) * 2
+
+#information
+  width: book_width * 3 + 40px * 2 + 30px + 26px
+  height: book_heihgt + 40px
+  background: #8E44AD
+  top: 10px
+  right: 10px
+  .book
+    top: 30px
+    &:nth-child(1)
+      left: 30px
+    &:nth-child(2)
+      left: 30px + 40px + book_width
+    &:nth-child(3)
+      left: 30px + (40px + book_width) * 2
+
+#ux
+  background: #27AE60
+  width: ux_width = main_width - 20px
+  height: book_heihgt * 5
+  left: 10px
+  top: book_heihgt + 60px
+  row1 = 30px
+  row2 = 30px + book_heihgt + 40px
+  row3 = 30px + book_heihgt*2 + 80px
+  column1 = book_width / 2 + 20px
+  column2 = ux_width / 2 - 50px
+  column3 = ux_width - (book_width/2) - 20px - 50px
+  .book
+    top: row1
+    &.observing_the_user_experience
+      left: column1 - (book_width/2)
+    &.analyzing_the_social_web
+      top: row2
+      left: column1 - (book_width/2)
+    &.sketching_user_experiences
+      left: column2 - (book_width/2) - 30px - book_width
+    &.this_is_service_design_thinking
+      left: column2 - (book_width/2)
+    &.the_ux_book
+      left: column2 + (book_width/2) + 30px
+    &.writing_for_interaction
+      top: row2
+      left: column2 - (book_width*2) - 30px
+    &.mobile_user_experience
+      top: row2
+      left: column2 - (book_width*1) - 10px
+    &.agile_user_experience_design
+      top: row2
+      left: column2 + (book_width*0) + 10px
+    &.experience_design
+      top: row3
+      left: column2 - book_width - 15px
+    &.it_s_our_research
+      top: row3
+      left: column2 + 15px
+    &.designing_the_search_experience
+      top: row2
+      left: column2 + (book_width*1) + 30px
+    &.usability_testing_essentials
+      left: column3 - (book_width/2)
+    &.measuring_the_user_experience
+      top: row2
+      left: column3 - book_width - 10px
+    &.quantifying_the_user_experience
+      top: row2
+      left: column3 + 10px
+    &.user_experience_management
+      top: row3
+      left: column3 - (book_width/2)
+  #observing
+    position: absolute
+    left: column1 - (book_width/4)
+    width: (book_width/2)
+    height: 50px
+    top: row1 + book_heihgt + 10px
+
+#interaction
+  top: 2000px

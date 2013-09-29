@@ -1,7 +1,45 @@
-article{clear:both}
-.book{width:99px;height:122.5px;background-position:center center;background-size:cover;position:relative;float:left}
+body{margin:0;padding:0;background:#ccc}
+article{position:absolute}
+.container{width:800px;margin:0 auto;position:relative;background:#fff}
+.howami{font-size:86px}
+.line-top{position:relative;}
+.line-top .left,.line-top .right{width:50%;height:100%;position:absolute;top:0;border-top:1px solid #000}
+.line-top .left{left:0;border-right:1px solid #000}
+.line-top .right{right:0;border-left:1px solid #000}
+.book{width:79.2px;height:98px;background-position:center center;background-size:cover;position:absolute;left:0;top:0}
 .want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover}
-.want{top:0;background-image:url("../images/want.png");}
+.want{top:5px;background-image:url("../images/want.png");}
 .status-want .want{background-image:url("../images/want_check.png")}
-.push{top:25px;background-image:url("../images/push.png");}
+.push{top:30px;background-image:url("../images/push.png");}
 .status-push .push{background-image:url("../images/push_check.png")}
+.subject{padding:5px 0 0 5px;color:#fff;font-size:20px}
+.main .container{height:1000px}
+#innovation{width:373.6px;height:138px;background:#2ecc71;top:10px;left:10px;}
+#innovation .book{top:30px;}
+#innovation .book:nth-child(1){left:30px}
+#innovation .book:nth-child(2){left:149.2px}
+#innovation .book:nth-child(3){left:268.4px}
+#information{width:373.6px;height:138px;background:#8e44ad;top:10px;right:10px;}
+#information .book{top:30px;}
+#information .book:nth-child(1){left:30px}
+#information .book:nth-child(2){left:149.2px}
+#information .book:nth-child(3){left:268.4px}
+#ux{background:#27ae60;width:780px;height:490px;left:10px;top:158px;}
+#ux .book{top:30px;}
+#ux .book.observing_the_user_experience{left:20px}
+#ux .book.analyzing_the_social_web{top:168px;left:20px}
+#ux .book.sketching_user_experiences{left:191.2px}
+#ux .book.this_is_service_design_thinking{left:300.4px}
+#ux .book.the_ux_book{left:409.6px}
+#ux .book.writing_for_interaction{top:168px;left:151.6px}
+#ux .book.mobile_user_experience{top:168px;left:250.8px}
+#ux .book.agile_user_experience_design{top:168px;left:350px}
+#ux .book.experience_design{top:306px;left:245.8px}
+#ux .book.it_s_our_research{top:306px;left:355px}
+#ux .book.designing_the_search_experience{top:168px;left:449.2px}
+#ux .book.usability_testing_essentials{left:630.8px}
+#ux .book.measuring_the_user_experience{top:168px;left:581.1999999999999px}
+#ux .book.quantifying_the_user_experience{top:168px;left:680.4px}
+#ux .book.user_experience_management{top:306px;left:630.8px}
+#ux #observing{position:absolute;left:39.8px;width:39.6px;height:50px;top:138px}
+#interaction{top:2000px}

@@ -22,22 +22,34 @@ html
     script(src='scripts/index.js')
   body(ng-app='sungood') 
     .header
-      .howami 我是______，我的學習地圖：
+      .container
+        .howami 我是______，<br />我的學習地圖：
     .main(ng-controller="BookCtrl")
-      section
-        article
-          .book(ng-repeat="book in books | filter:{group:'INNOVATION'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
-            .want(ng-click="want(book)")
-            .push(ng-click="push(book)")
-        article
-          .book(ng-repeat="book in books | filter:{group:'UX'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
-            .want(ng-click="want(book)")
-            .push(ng-click="push(book)")
-        article
-          .book(ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
-            .want(ng-click="want(book)")
-            .push(ng-click="push(book)")
-        article
-          .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
-            .want(ng-click="want(book)")
+      .container
+        section
+          article#innovation
+            .subject INNOVATION
+            .wrap
+              .book(ng-repeat="book in books | filter:{group:'INNOVATION'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+                .want(ng-click="want(book)")
+                .push(ng-click="push(book)")
+          article#information
+            .subject INFORMATION DESIGN
+            .wrap
+              .book(ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+                .want(ng-click="want(book)")
+                .push(ng-click="push(book)")
+          article#ux
+            .subject UX
+            #observing.line-top
+              .left
+              .right
+            .main
+              .book(ng-repeat="book in books | filter:{group:'UX'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+                .want(ng-click="want(book)")
+                .push(ng-click="push(book)")
+          article#interaction
+            .subject INTERACTION DESIGN
+            .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+              .want(ng-click="want(book)")
             .push(ng-click="push(book)")

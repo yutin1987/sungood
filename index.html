@@ -25,35 +25,53 @@
   </head>
   <body ng-app="sungood"> 
     <div class="header">
-      <div class="howami">我是______，我的學習地圖：</div>
+      <div class="container">
+        <div class="howami">我是______，<br />我的學習地圖：</div>
+      </div>
     </div>
     <div ng-controller="BookCtrl" class="main">
-      <section>
-        <article>
-          <div ng-repeat="book in books | filter:{group:'INNOVATION'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
-            <div ng-click="want(book)" class="want"></div>
+      <div class="container">
+        <section>
+          <article id="innovation">
+            <div class="subject">INNOVATION</div>
+            <div class="wrap">
+              <div ng-repeat="book in books | filter:{group:'INNOVATION'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+                <div ng-click="want(book)" class="want"></div>
+                <div ng-click="push(book)" class="push"></div>
+              </div>
+            </div>
+          </article>
+          <article id="information">
+            <div class="subject">INFORMATION DESIGN</div>
+            <div class="wrap">
+              <div ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+                <div ng-click="want(book)" class="want"></div>
+                <div ng-click="push(book)" class="push"></div>
+              </div>
+            </div>
+          </article>
+          <article id="ux">
+            <div class="subject">UX</div>
+            <div id="observing" class="line-top">
+              <div class="left"></div>
+              <div class="right"></div>
+            </div>
+            <div class="main">
+              <div ng-repeat="book in books | filter:{group:'UX'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+                <div ng-click="want(book)" class="want"></div>
+                <div ng-click="push(book)" class="push"></div>
+              </div>
+            </div>
+          </article>
+          <article id="interaction">
+            <div class="subject">INTERACTION DESIGN</div>
+            <div ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+              <div ng-click="want(book)" class="want"></div>
+            </div>
             <div ng-click="push(book)" class="push"></div>
-          </div>
-        </article>
-        <article>
-          <div ng-repeat="book in books | filter:{group:'UX'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
-            <div ng-click="want(book)" class="want"></div>
-            <div ng-click="push(book)" class="push"></div>
-          </div>
-        </article>
-        <article>
-          <div ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
-            <div ng-click="want(book)" class="want"></div>
-            <div ng-click="push(book)" class="push"></div>
-          </div>
-        </article>
-        <article>
-          <div ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}}">
-            <div ng-click="want(book)" class="want"></div>
-            <div ng-click="push(book)" class="push"></div>
-          </div>
-        </article>
-      </section>
+          </article>
+        </section>
+      </div>
     </div>
   </body>
 </html>
