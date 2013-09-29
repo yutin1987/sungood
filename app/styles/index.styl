@@ -20,20 +20,24 @@ main_width=800px
 .howami
   font-size: 86px
 
-.line-top
-  position: relative
-  .left, .right
-    width: 50%
+.line-top, .line-bottom
+  position: absolute
+  height: 40px
+  .box-a, .box-b
+    width: 100%
     height: 100%
     position: absolute
     top: 0px
-    border-top: 1px solid #000
-  .left
     left: 0px
-    border-right: 1px solid #000
-  .right
-    right: 0px
+  .box-b
+    left: 50%
     border-left: 1px solid #000
+
+.box-a
+  .line-top &
+    border-top: 1px solid #000
+  .line-bottom &
+    border-bottom: 1px solid #000
 
 .book
   width: book_width
@@ -105,12 +109,12 @@ main_width=800px
 #ux
   background: #27AE60
   width: ux_width = main_width - 20px
-  height: book_heihgt * 5
+  height: book_heihgt * 3 + 30px * 2 + 60px * 2
   left: 10px
-  top: book_heihgt + 60px
+  top: book_heihgt + 40px + 30px
   row1 = 30px
-  row2 = 30px + book_heihgt + 40px
-  row3 = 30px + book_heihgt*2 + 80px
+  row2 = 30px + book_heihgt + 60px
+  row3 = 30px + book_heihgt*2 + 120px
   column1 = book_width / 2 + 20px
   column2 = ux_width / 2 - 50px
   column3 = ux_width - (book_width/2) - 20px - 50px
@@ -156,12 +160,67 @@ main_width=800px
     &.user_experience_management
       top: row3
       left: column3 - (book_width/2)
-  #observing
-    position: absolute
-    left: column1 - (book_width/4)
+  .left1
     width: (book_width/2)
-    height: 50px
+    left: column1 - (book_width/4)
     top: row1 + book_heihgt + 10px
+  .center1top
+    width: book_width*2
+    left: column2 - book_width
+    top: row1 + book_heihgt + 10px
+  .center1bottom
+    width: book_width*4
+    left: column2 - book_width*2
+    top: row1 + book_heihgt + 10px
+  .center2top
+    width: book_width*4
+    left: column2 - book_width*2
+    top: row2 + book_heihgt + 10px
+  .center2bottom
+    width: book_width
+    left: column2 - (book_width/2)
+    top: row2 + book_heihgt + 10px
+  .right1
+    width: book_width
+    left: column3 - (book_width/2)
+    top: row1 + book_heihgt + 10px
+  .right2
+    width: book_width
+    left: column3 - (book_width/2)
+    top: row2 + book_heihgt + 10px
 
 #interaction
-  top: 2000px
+  background: #256B33
+  width: interaction_width = main_width - 20px
+  height: book_heihgt * 2 + 30px * 2 + 60px
+  left: 10px
+  top: (book_heihgt + 40px + 30px) + (book_heihgt * 3 + 30px * 2 + 60px * 2) + 20px
+  row1 = 30px
+  row2 = 30px + book_heihgt + 60px
+  column1 = interaction_width * 1/4
+  column2 = interaction_width * 3/4
+  .book
+    top: row1
+    &.human_computer_interaction
+      top: row1
+      left: column1 - (book_width/2)
+    &.a_touch_of_code
+      top: row2
+      left: column1 - book_width - 20px
+    &.art_com
+      top: row2
+      left: column1 + 20px
+    &.brave_nui_world
+      top: row1
+      left: column2 - (book_width/2)
+    &.ui_is_communication
+      top: row2
+      left: column2 - (book_width/2)
+  .left1
+    width: book_width
+    left: column1 - (book_width/2)
+    top: row1 + book_heihgt + 10px
+  .right1
+    width: (book_width/2)
+    left: column2 - (book_width/4)
+    top: row1 + book_heihgt + 10px

@@ -41,15 +41,22 @@ html
                 .push(ng-click="push(book)")
           article#ux
             .subject UX
-            #observing.line-top
-              .left
-              .right
+            .left1.line-bottom
+            .center1top.line-top
+            .center1bottom.line-bottom
+            .center2top.line-top
+            .center2bottom.line-bottom
+            .right1.line-bottom
+            .right2.line-top
             .main
               .book(ng-repeat="book in books | filter:{group:'UX'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
           article#interaction
             .subject INTERACTION DESIGN
-            .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
-              .want(ng-click="want(book)")
-            .push(ng-click="push(book)")
+            .left1.line-bottom
+            .right1.line-bottom
+            .main
+              .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+                .want(ng-click="want(book)")
+                .push(ng-click="push(book)")

@@ -1,3 +1,6 @@
+$ ->
+  $('.line-top, .line-bottom').append '<div class="box-a" />', '<div class="box-b" />'
+
 app = angular.module("sungood", [])
 
 app.filter 'filename', () ->

@@ -52,10 +52,13 @@
           </article>
           <article id="ux">
             <div class="subject">UX</div>
-            <div id="observing" class="line-top">
-              <div class="left"></div>
-              <div class="right"></div>
-            </div>
+            <div class="left1 line-bottom"></div>
+            <div class="center1top line-top"></div>
+            <div class="center1bottom line-bottom"></div>
+            <div class="center2top line-top"></div>
+            <div class="center2bottom line-bottom"></div>
+            <div class="right1 line-bottom"></div>
+            <div class="right2 line-top"></div>
             <div class="main">
               <div ng-repeat="book in books | filter:{group:'UX'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
                 <div ng-click="want(book)" class="want"></div>
@@ -65,10 +68,14 @@
           </article>
           <article id="interaction">
             <div class="subject">INTERACTION DESIGN</div>
-            <div ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
-              <div ng-click="want(book)" class="want"></div>
+            <div class="left1 line-bottom"></div>
+            <div class="right1 line-bottom"></div>
+            <div class="main">
+              <div ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+                <div ng-click="want(book)" class="want"></div>
+                <div ng-click="push(book)" class="push"></div>
+              </div>
             </div>
-            <div ng-click="push(book)" class="push"></div>
           </article>
         </section>
       </div>
