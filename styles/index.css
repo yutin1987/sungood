@@ -1,22 +1,25 @@
-body{margin:0;padding:0;background:#ccc}
+body{margin:0;padding:0;background:#ccc;font-family:'康熙字典體','Microsoft JhengHei','lucida grande',tahoma,verdana,arial,sans-serif}
 article{position:absolute}
 input{display:block;font-size:17px;line-height:20px;padding:12px 18px 13px;border:1px solid #bdc3c7}
 button{display:block;background:#1abc9c;font-size:17px;line-height:20px;padding:12px 18px 13px;border:none;color:#fff;width:213px;border-radius:6px;}
 button:hover{background:#48c9b0}
 .container{width:800px;margin:0 auto;position:relative;background:#fff}
-.howami{font-size:86px;padding:10px 0 0 10px;cursor:pointer}
+.howami{font-size:76px;padding:10px 0 0 10px;cursor:pointer}
 .input{margin:0 200px;margin-top:30px;font-size:16px;}
 .input input{width:100%;margin-bottom:20px}
 .input button{margin:0 auto}
+.header .container{min-height:156px}
 .footer .container{text-align:right}
-.share{position:absolute;right:10px;top:130px}
+.share{position:absolute;right:10px;top:120px}
+.note{position:absolute;top:126px;right:130px;width:150px;}
+.note .want,.note .push{position:relative;float:left;top:0;left:0;width:50px;padding-left:24px;background-size:20px 20px;background-position:0 0}
 .line-top,.line-bottom{position:absolute;height:40px;}
 .line-top .box-a,.line-bottom .box-a,.line-top .box-b,.line-bottom .box-b{width:100%;height:100%;position:absolute;top:0;left:0}
 .line-top .box-b,.line-bottom .box-b{left:50%;border-left:1px solid #000}
 .line-top .box-a{border-top:1px solid #000}
 .line-bottom .box-a{border-bottom:1px solid #000}
 .book{width:79.2px;height:98px;background-position:center center;background-size:cover;position:absolute;left:0;top:0}
-.want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover}
+.want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover;background-repeat:no-repeat}
 .want{top:5px;background-image:url("../images/want.png");}
 .status-want .want{background-image:url("../images/want_check.png")}
 .push{top:30px;background-image:url("../images/push.png");}
@@ -24,46 +27,46 @@ button:hover{background:#48c9b0}
 .subject{padding:5px 0 0 5px;color:#fff;font-size:20px}
 .header form{height:200px}
 .main section{height:1000px}
-#innovation{width:373.6px;height:138px;background:#2ecc71;top:10px;left:10px;}
-#innovation .book{top:30px;}
+#innovation{width:373.6px;height:148px;background:#2ecc71;top:10px;left:10px;}
+#innovation .book{top:40px;}
 #innovation .book:nth-child(1){left:30px}
 #innovation .book:nth-child(2){left:149.2px}
 #innovation .book:nth-child(3){left:268.4px}
-#information{width:373.6px;height:138px;background:#8e44ad;top:10px;right:10px;}
-#information .book{top:30px;}
+#information{width:373.6px;height:148px;background:#8e44ad;top:10px;right:10px;}
+#information .book{top:40px;}
 #information .book:nth-child(1){left:30px}
 #information .book:nth-child(2){left:149.2px}
 #information .book:nth-child(3){left:268.4px}
-#ux{background:#27ae60;width:780px;height:474px;left:10px;top:168px;}
-#ux .book{top:30px;}
+#ux{background:#27ae60;width:780px;height:474px;left:10px;top:184px;}
+#ux .book{top:40px;}
 #ux .book.observing_the_user_experience{left:20px}
-#ux .book.analyzing_the_social_web{top:188px;left:20px}
+#ux .book.analyzing_the_social_web{top:198px;left:20px}
 #ux .book.sketching_user_experiences{left:191.2px}
 #ux .book.this_is_service_design_thinking{left:300.4px}
 #ux .book.the_ux_book{left:409.6px}
-#ux .book.writing_for_interaction{top:188px;left:151.6px}
-#ux .book.mobile_user_experience{top:188px;left:250.8px}
-#ux .book.agile_user_experience_design{top:188px;left:350px}
-#ux .book.experience_design{top:346px;left:245.8px}
-#ux .book.it_s_our_research{top:346px;left:355px}
-#ux .book.designing_the_search_experience{top:188px;left:449.2px}
+#ux .book.writing_for_interaction{top:198px;left:151.6px}
+#ux .book.mobile_user_experience{top:198px;left:250.8px}
+#ux .book.agile_user_experience_design{top:198px;left:350px}
+#ux .book.experience_design{top:356px;left:245.8px}
+#ux .book.it_s_our_research{top:356px;left:355px}
+#ux .book.designing_the_search_experience{top:198px;left:449.2px}
 #ux .book.usability_testing_essentials{left:630.8px}
-#ux .book.measuring_the_user_experience{top:188px;left:581.1999999999999px}
-#ux .book.quantifying_the_user_experience{top:188px;left:680.4px}
-#ux .book.user_experience_management{top:346px;left:630.8px}
-#ux .left1{width:39.6px;left:39.8px;top:138px}
-#ux .center1top{width:158.4px;left:260.8px;top:138px}
-#ux .center1bottom{width:316.8px;left:181.6px;top:138px}
-#ux .center2top{width:316.8px;left:181.6px;top:296px}
-#ux .center2bottom{width:79.2px;left:300.4px;top:296px}
-#ux .right1{width:79.2px;left:630.8px;top:138px}
-#ux .right2{width:79.2px;left:630.8px;top:296px}
-#interaction{background:#256b33;width:780px;height:316px;left:10px;top:662px;}
-#interaction .book{top:30px;}
-#interaction .book.human_computer_interaction{top:30px;left:155.4px}
-#interaction .book.a_touch_of_code{top:188px;left:95.8px}
-#interaction .book.art_com{top:188px;left:215px}
-#interaction .book.brave_nui_world{top:30px;left:545.4px}
-#interaction .book.ui_is_communication{top:188px;left:545.4px}
-#interaction .left1{width:79.2px;left:155.4px;top:138px}
-#interaction .right1{width:39.6px;left:565.2px;top:138px}
+#ux .book.measuring_the_user_experience{top:198px;left:581.1999999999999px}
+#ux .book.quantifying_the_user_experience{top:198px;left:680.4px}
+#ux .book.user_experience_management{top:356px;left:630.8px}
+#ux .left1{width:39.6px;left:39.8px;top:148px}
+#ux .center1top{width:158.4px;left:260.8px;top:148px}
+#ux .center1bottom{width:316.8px;left:181.6px;top:148px}
+#ux .center2top{width:316.8px;left:181.6px;top:306px}
+#ux .center2bottom{width:79.2px;left:300.4px;top:306px}
+#ux .right1{width:79.2px;left:630.8px;top:148px}
+#ux .right2{width:79.2px;left:630.8px;top:306px}
+#interaction{background:#256b33;width:780px;height:316px;left:10px;top:682px;}
+#interaction .book{top:40px;}
+#interaction .book.human_computer_interaction{top:40px;left:155.4px}
+#interaction .book.a_touch_of_code{top:198px;left:95.8px}
+#interaction .book.art_com{top:198px;left:215px}
+#interaction .book.brave_nui_world{top:40px;left:545.4px}
+#interaction .book.ui_is_communication{top:198px;left:545.4px}
+#interaction .left1{width:79.2px;left:155.4px;top:148px}
+#interaction .right1{width:39.6px;left:565.2px;top:148px}

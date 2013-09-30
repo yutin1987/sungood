@@ -25,7 +25,7 @@ html(ng-app='sungood')
   body(ng-controller="BookCtrl") 
     .header
       .container
-        .howami(ng-click="edit()") 我是_{{name}}_，<br />我的學習地圖：
+        .howami(ng-click="edit()") {{name}}&nbsp;的學習地圖：
         .share
           a(target="_blank",href="http://www.facebook.com/sharer/sharer.php?u={{share_link}}")
             img(src="./images/share.png",border="0")
@@ -34,6 +34,9 @@ html(ng-app='sungood')
               p 你是？
               input(placeholder="name",ng-model="name")
               button(type="submit") 輸入完成
+        .note
+          .push 推推
+          .want 想想
     .main
       .container(ng-hide="editName")
         section

@@ -2,6 +2,7 @@ body
   margin: 0px
   padding: 0px
   background: #CCCCCC
+  font-family: '康熙字典體','Microsoft JhengHei','lucida grande',tahoma,verdana,arial,sans-serif
 
 article
   position: absolute
@@ -38,7 +39,7 @@ main_width=800px
   background: #FFF
 
 .howami
-  font-size: 86px
+  font-size: 76px
   padding: 10px 0px 0px 10px
   cursor: pointer
 
@@ -52,6 +53,10 @@ main_width=800px
   button
     margin: 0px auto
 
+
+.header
+  .container
+    min-height: 156px
 .footer
   .container
     text-align: right
@@ -60,7 +65,22 @@ main_width=800px
 .share
   position: absolute
   right: 10px
-  top: 130px
+  top: 120px
+
+.note
+  position: absolute
+  top: 126px
+  right: 130px
+  width: 150px
+  .want, .push
+    position: relative
+    float: left
+    top: 0px
+    left: 0px
+    width: 50px
+    padding-left: 24px
+    background-size: 20px 20px
+    background-position: 0px 0px
 
 .line-top, .line-bottom
   position: absolute
@@ -97,6 +117,7 @@ main_width=800px
   left: -10px
   background-position: center center
   background-size: cover
+  background-repeat: no-repeat
 
 .want
   top: 5px
@@ -123,12 +144,12 @@ main_width=800px
 
 #innovation
   width: book_width * 3 + 40px * 2 + 30px + 26px
-  height: book_heihgt + 40px
+  height: book_heihgt + 50px
   background: #2ECC71
   top: 10px
   left: 10px
   .book
-    top: 30px
+    top: 40px
     &:nth-child(1)
       left: 30px
     &:nth-child(2)
@@ -138,12 +159,12 @@ main_width=800px
 
 #information
   width: book_width * 3 + 40px * 2 + 30px + 26px
-  height: book_heihgt + 40px
+  height: book_heihgt + 50px
   background: #8E44AD
   top: 10px
   right: 10px
   .book
-    top: 30px
+    top: 40px
     &:nth-child(1)
       left: 30px
     &:nth-child(2)
@@ -156,10 +177,10 @@ main_width=800px
   width: ux_width = main_width - 20px
   height: book_heihgt * 3 + 30px * 2 + 60px * 2
   left: 10px
-  top: book_heihgt + 40px + 30px
-  row1 = 30px
-  row2 = 30px + book_heihgt + 60px
-  row3 = 30px + book_heihgt*2 + 120px
+  top: book_heihgt + 50px + 36px
+  row1 = 40px
+  row2 = 40px + book_heihgt + 60px
+  row3 = 40px + book_heihgt*2 + 120px
   column1 = book_width / 2 + 20px
   column2 = ux_width / 2 - 50px
   column3 = ux_width - (book_width/2) - 20px - 50px
@@ -239,9 +260,9 @@ main_width=800px
   width: interaction_width = main_width - 20px
   height: book_heihgt * 2 + 30px * 2 + 60px
   left: 10px
-  top: (book_heihgt + 40px + 30px) + (book_heihgt * 3 + 30px * 2 + 60px * 2) + 20px
-  row1 = 30px
-  row2 = 30px + book_heihgt + 60px
+  top: (book_heihgt + 50px + 40px) + (book_heihgt * 3 + 30px * 2 + 60px * 2) + 20px
+  row1 = 40px
+  row2 = 40px + book_heihgt + 60px
   column1 = interaction_width * 1/4
   column2 = interaction_width * 3/4
   .book
