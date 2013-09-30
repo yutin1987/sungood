@@ -54,15 +54,21 @@ app.controller "BookCtrl", ($scope) ->
               item.is_push = true
               item.is_want = true
           break
+    ga('send', 'event', 'transform', hash)
   )()
 
   $scope.enter = () ->
     $scope.editName = off
+    ga('send', 'event', 'edit', 'OFF')
     $scope.name = 'No Name' unless $scope.name
     location.hash = location.hash.split('_')[0] + '_' + $scope.name
 
   $scope.edit = () ->
+    ga('send', 'event', 'edit', 'ON')
     $scope.editName = on
+
+  $scope.share = () ->
+    ga('send', 'event', 'share', location.href)
 
   updae_hash = (book) ->
     code = book.code
@@ -81,10 +87,12 @@ app.controller "BookCtrl", ($scope) ->
 
   $scope.want = (book) ->
     book.is_want = !book.is_want
+    ga('send', 'event', 'want', if book.book then 'YES' else 'NO')
     updae_hash book
 
   $scope.push = (book) ->
     book.is_push = !book.is_push
+    ga('send', 'event', 'push', if book.is_push then 'YES' else 'NO')
     updae_hash book
 
   # (listener_width = ()->

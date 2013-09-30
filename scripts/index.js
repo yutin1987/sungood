@@ -144,7 +144,7 @@ app.controller("BookCtrl", function($scope) {
     book = hash[0].match(/[a-z][0-9]/gi);
     $scope.name = hash[1] || '';
     $scope.editName = $scope.name ? false : true;
-    return angular.forEach(book, function(value, key) {
+    angular.forEach(book, function(value, key) {
       var item, _i, _len, _ref, _results;
       _ref = $scope.books;
       _results = [];
@@ -169,16 +169,22 @@ app.controller("BookCtrl", function($scope) {
       }
       return _results;
     });
+    return ga('send', 'event', 'transform', hash);
   })();
   $scope.enter = function() {
     $scope.editName = false;
+    ga('send', 'event', 'edit', 'OFF');
     if (!$scope.name) {
       $scope.name = 'No Name';
     }
     return location.hash = location.hash.split('_')[0] + '_' + $scope.name;
   };
   $scope.edit = function() {
+    ga('send', 'event', 'edit', 'ON');
     return $scope.editName = true;
+  };
+  $scope.share = function() {
+    return ga('send', 'event', 'share', location.href);
   };
   updae_hash = function(book) {
     var avg, code, name, reg, value;
@@ -203,10 +209,12 @@ app.controller("BookCtrl", function($scope) {
   };
   $scope.want = function(book) {
     book.is_want = !book.is_want;
+    ga('send', 'event', 'want', book.book ? 'YES' : 'NO');
     return updae_hash(book);
   };
   return $scope.push = function(book) {
     book.is_push = !book.is_push;
+    ga('send', 'event', 'push', book.is_push ? 'YES' : 'NO');
     return updae_hash(book);
   };
 });

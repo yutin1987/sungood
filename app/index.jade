@@ -16,7 +16,7 @@ html(ng-app='sungood')
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X');
+      ga('create', 'UA-37161265-11', 'yutin1987.github.io');
       ga('send', 'pageview');
     link(rel='stylesheet', href='styles/index.css')
     script(src='bower_components/jquery/jquery.js')
@@ -27,7 +27,7 @@ html(ng-app='sungood')
       .container
         .howami(ng-click="edit()") {{name}}&nbsp;的學習地圖：
         .share
-          a(target="_blank",href="http://www.facebook.com/sharer/sharer.php?u={{share_link}}")
+          a(target="_blank",href="http://www.facebook.com/sharer/sharer.php?u={{share_link}}",ng-click="share()")
             img(src="./images/share.png",border="0")
         .input(ng-show="editName")
             form(ng-submit="enter()")

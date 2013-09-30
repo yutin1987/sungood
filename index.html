@@ -17,7 +17,7 @@
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXX-X');
+      ga('create', 'UA-37161265-11', 'yutin1987.github.io');
       ga('send', 'pageview');
     </script>
     <link rel="stylesheet" href="styles/index.css">
@@ -29,7 +29,7 @@
     <div class="header">
       <div class="container">
         <div ng-click="edit()" class="howami">{{name}}&nbsp;的學習地圖：</div>
-        <div class="share"><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{share_link}}"><img src="./images/share.png" border="0"></a></div>
+        <div class="share"><a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{share_link}}" ng-click="share()"><img src="./images/share.png" border="0"></a></div>
         <div ng-show="editName" class="input">
           <form ng-submit="enter()">
             <p>你是？</p>
