@@ -169,7 +169,7 @@ app.controller("BookCtrl", function($scope) {
       }
       return _results;
     });
-    return ga('send', 'event', 'transform', hash);
+    return ga('send', 'event', 'transform', decodeURIComponent(location.hash));
   })();
   $scope.enter = function() {
     $scope.editName = false;

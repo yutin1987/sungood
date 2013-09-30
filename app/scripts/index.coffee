@@ -54,7 +54,7 @@ app.controller "BookCtrl", ($scope) ->
               item.is_push = true
               item.is_want = true
           break
-    ga('send', 'event', 'transform', hash)
+    ga('send', 'event', 'transform', decodeURIComponent(location.hash))
   )()
 
   $scope.enter = () ->
