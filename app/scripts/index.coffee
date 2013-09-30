@@ -58,6 +58,7 @@ app.controller "BookCtrl", ($scope) ->
 
   $scope.enter = () ->
     $scope.editName = off
+    $scope.name = 'No Name' unless $scope.name
     location.hash = location.hash.split('_')[0] + '_' + $scope.name
 
   $scope.edit = () ->
@@ -68,7 +69,7 @@ app.controller "BookCtrl", ($scope) ->
     value = 0
     value += 1 if book.is_push
     value += 2 if book.is_want
-    
+
     avg = location.hash.split('_')
     reg = new RegExp(code+'[0-9]?','gi')
     book = avg[0] || ''

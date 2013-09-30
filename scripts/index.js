@@ -172,6 +172,9 @@ app.controller("BookCtrl", function($scope) {
   })();
   $scope.enter = function() {
     $scope.editName = false;
+    if (!$scope.name) {
+      $scope.name = 'No Name';
+    }
     return location.hash = location.hash.split('_')[0] + '_' + $scope.name;
   };
   $scope.edit = function() {
