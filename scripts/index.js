@@ -153,10 +153,14 @@ app.controller("BookCtrl", function($scope) {
         if (item.code === value[0]) {
           switch (value[1]) {
             case '1':
-              item.status = 'want';
+              item.is_push = true;
               break;
             case '2':
-              item.status = 'push';
+              item.is_want = true;
+              break;
+            case '3':
+              item.is_push = true;
+              item.is_want = true;
           }
           break;
         } else {
@@ -173,36 +177,34 @@ app.controller("BookCtrl", function($scope) {
   $scope.edit = function() {
     return $scope.editName = true;
   };
-  updae_hash = function(code, val) {
-    var avg, book, name, reg;
+  updae_hash = function(book) {
+    var avg, code, name, reg, value;
+    code = book.code;
+    value = 0;
+    if (book.is_push) {
+      value += 1;
+    }
+    if (book.is_want) {
+      value += 2;
+    }
     avg = location.hash.split('_');
     reg = new RegExp(code + '[0-9]?', 'gi');
     book = avg[0] || '';
-    if (book.search(reg) < 0 && val > 0) {
-      book = book + code + val;
+    if (book.search(reg) < 0 && value > 0) {
+      book = book + code + value;
     }
-    book = book.replace(reg, val > 0 ? code + val : '');
+    book = book.replace(reg, value > 0 ? code + value : '');
     name = avg[1] || '';
     location.hash = book + '_' + name;
     return $scope.share_link = encodeURIComponent(location.href);
   };
   $scope.want = function(book) {
-    if (book.status === 'want') {
-      book.status = void 0;
-      return updae_hash(book.code, 0);
-    } else {
-      book.status = 'want';
-      return updae_hash(book.code, 1);
-    }
+    book.is_want = !book.is_want;
+    return updae_hash(book);
   };
   return $scope.push = function(book) {
-    if (book.status === 'push') {
-      book.status = void 0;
-      return updae_hash(book.code, 0);
-    } else {
-      book.status = 'push';
-      return updae_hash(book.code, 2);
-    }
+    book.is_push = !book.is_push;
+    return updae_hash(book);
   };
 });
 

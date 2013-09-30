@@ -48,8 +48,11 @@ app.controller "BookCtrl", ($scope) ->
       for item in $scope.books
         if item.code is value[0]
           switch value[1]
-            when '1' then item.status = 'want'
-            when '2' then item.status = 'push'
+            when '1' then item.is_push = true
+            when '2' then item.is_want = true
+            when '3'
+              item.is_push = true
+              item.is_want = true
           break
   )()
 
@@ -60,31 +63,28 @@ app.controller "BookCtrl", ($scope) ->
   $scope.edit = () ->
     $scope.editName = on
 
-  updae_hash = (code,val) ->
+  updae_hash = (book) ->
+    code = book.code
+    value = 0
+    value += 1 if book.is_push
+    value += 2 if book.is_want
+    
     avg = location.hash.split('_')
     reg = new RegExp(code+'[0-9]?','gi')
     book = avg[0] || ''
-    book = book+code+val if book.search(reg) < 0 and val > 0
-    book = book.replace reg, if val > 0 then code+val else ''
+    book = book+code+value if book.search(reg) < 0 and value > 0
+    book = book.replace reg, if value > 0 then code+value else ''
     name = avg[1] || ''
     location.hash = book+'_'+name
     $scope.share_link = encodeURIComponent(location.href)
 
   $scope.want = (book) ->
-    if book.status is 'want'
-      book.status = undefined
-      updae_hash book.code , 0
-    else
-      book.status = 'want'
-      updae_hash book.code , 1
+    book.is_want = !book.is_want
+    updae_hash book
 
   $scope.push = (book) ->
-    if book.status is 'push'
-      book.status = undefined
-      updae_hash book.code , 0
-    else
-      book.status = 'push'
-      updae_hash book.code , 2
+    book.is_push = !book.is_push
+    updae_hash book
 
   # (listener_width = ()->
   #   width = $(window).width() - 200 - 5

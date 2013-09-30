@@ -37,6 +37,7 @@
             <button type="submit">輸入完成</button>
           </form>
         </div>
+        <div class="tip">勾選你的學習地圖「推推，推薦已入手書」「想想，想買回家私藏」</div>
         <div class="note">
           <div class="push">推推</div>
           <div class="want">想想</div>
@@ -49,7 +50,7 @@
           <article id="innovation">
             <div class="subject">INNOVATION</div>
             <div class="wrap">
-              <div ng-repeat="book in books | filter:{group:'INNOVATION'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+              <div ng-repeat="book in books | filter:{group:'INNOVATION'}" ng-class="{'status-push':book.is_push, 'status-want':book.is_want}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book {{book.name | filename}}">
                 <div ng-click="want(book)" class="want"></div>
                 <div ng-click="push(book)" class="push"></div>
               </div>
@@ -58,7 +59,7 @@
           <article id="information">
             <div class="subject">INFORMATION DESIGN</div>
             <div class="wrap">
-              <div ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+              <div ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}" ng-class="{'status-push':book.is_push, 'status-want':book.is_want}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book {{book.name | filename}}">
                 <div ng-click="want(book)" class="want"></div>
                 <div ng-click="push(book)" class="push"></div>
               </div>
@@ -74,7 +75,7 @@
             <div class="right1 line-bottom"></div>
             <div class="right2 line-top"></div>
             <div class="main">
-              <div ng-repeat="book in books | filter:{group:'UX'}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book status-{{book.status}} {{book.name | filename}}">
+              <div ng-repeat="book in books | filter:{group:'UX'}" ng-class="{'status-push':book.is_push, 'status-want':book.is_want}" style="background-image: url('images/{{book.name | filename}}.jpg')" class="book {{book.name | filename}}">
                 <div ng-click="want(book)" class="want"></div>
                 <div ng-click="push(book)" class="push"></div>
               </div>

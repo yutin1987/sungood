@@ -34,6 +34,7 @@ html(ng-app='sungood')
               p 你是？
               input(placeholder="name",ng-model="name")
               button(type="submit") 輸入完成
+        .tip 勾選你的學習地圖「推推，推薦已入手書」「想想，想買回家私藏」
         .note
           .push 推推
           .want 想想
@@ -43,13 +44,13 @@ html(ng-app='sungood')
           article#innovation
             .subject INNOVATION
             .wrap
-              .book(ng-repeat="book in books | filter:{group:'INNOVATION'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+              .book(ng-repeat="book in books | filter:{group:'INNOVATION'}",class="{{book.name | filename}}",ng-class="{'status-push':book.is_push, 'status-want':book.is_want}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
           article#information
             .subject INFORMATION DESIGN
             .wrap
-              .book(ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+              .book(ng-repeat="book in books | filter:{group:'INFORMATION DESIGN'}",class="{{book.name | filename}}",ng-class="{'status-push':book.is_push, 'status-want':book.is_want}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
           article#ux
@@ -62,7 +63,7 @@ html(ng-app='sungood')
             .right1.line-bottom
             .right2.line-top
             .main
-              .book(ng-repeat="book in books | filter:{group:'UX'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+              .book(ng-repeat="book in books | filter:{group:'UX'}",class="{{book.name | filename}}",ng-class="{'status-push':book.is_push, 'status-want':book.is_want}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
           article#interaction

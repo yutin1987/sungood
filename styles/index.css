@@ -11,6 +11,7 @@ button:hover{background:#48c9b0}
 .header .container{min-height:156px}
 .footer .container{text-align:right}
 .share{position:absolute;right:10px;top:120px}
+.tip{position:absolute;left:10px;top:131px;font-size:12px}
 .note{position:absolute;top:126px;right:130px;width:150px;}
 .note .want,.note .push{position:relative;float:left;top:0;left:0;width:50px;padding-left:24px;background-size:20px 20px;background-position:0 0}
 .line-top,.line-bottom{position:absolute;height:40px;}
@@ -20,9 +21,9 @@ button:hover{background:#48c9b0}
 .line-bottom .box-a{border-bottom:1px solid #000}
 .book{width:79.2px;height:98px;background-position:center center;background-size:cover;position:absolute;left:0;top:0}
 .want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover;background-repeat:no-repeat}
-.want{top:5px;background-image:url("../images/want.png");}
+.want{top:30px;background-image:url("../images/want.png");}
 .status-want .want{background-image:url("../images/want_check.png")}
-.push{top:30px;background-image:url("../images/push.png");}
+.push{top:5px;background-image:url("../images/push.png");}
 .status-push .push{background-image:url("../images/push_check.png")}
 .subject{padding:5px 0 0 5px;color:#fff;font-size:20px}
 .header form{height:200px}
