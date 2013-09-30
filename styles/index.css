@@ -1,7 +1,14 @@
 body{margin:0;padding:0;background:#ccc}
 article{position:absolute}
+input{display:block;font-size:17px;line-height:20px;padding:12px 18px 13px;border:1px solid #bdc3c7}
+button{display:block;background:#1abc9c;font-size:17px;line-height:20px;padding:12px 18px 13px;border:none;color:#fff;width:213px;border-radius:6px;}
+button:hover{background:#48c9b0}
 .container{width:800px;margin:0 auto;position:relative;background:#fff}
-.howami{font-size:86px}
+.howami{font-size:86px;cursor:pointer}
+.input{margin:0 200px;margin-top:30px;font-size:16px;}
+.input input{width:100%;margin-bottom:20px}
+.input button{margin:0 auto}
+.share{position:absolute;right:10px;top:130px}
 .line-top,.line-bottom{position:absolute;height:40px;}
 .line-top .box-a,.line-bottom .box-a,.line-top .box-b,.line-bottom .box-b{width:100%;height:100%;position:absolute;top:0;left:0}
 .line-top .box-b,.line-bottom .box-b{left:50%;border-left:1px solid #000}
@@ -14,7 +21,8 @@ article{position:absolute}
 .push{top:30px;background-image:url("../images/push.png");}
 .status-push .push{background-image:url("../images/push_check.png")}
 .subject{padding:5px 0 0 5px;color:#fff;font-size:20px}
-.main .container{height:1000px}
+.header form{height:200px}
+.main section{height:1000px}
 #innovation{width:373.6px;height:138px;background:#2ecc71;top:10px;left:10px;}
 #innovation .book{top:30px;}
 #innovation .book:nth-child(1){left:30px}

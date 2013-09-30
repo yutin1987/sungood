@@ -6,6 +6,26 @@ body
 article
   position: absolute
 
+input
+  display: block
+  font-size: 17px
+  line-height: 20px
+  padding: 12px 18px 13px
+  border: 1px solid #BDC3C7
+
+button
+  display: block
+  background: #1abc9c
+  font-size: 17px
+  line-height: 20px
+  padding: 12px 18px 13px
+  border: none
+  color: #ffffff
+  width: 213px
+  border-radius: 6px
+  &:hover
+    background: #48c9b0
+
 book_width=198px*2/5
 book_heihgt=245px*2/5
 
@@ -19,6 +39,22 @@ main_width=800px
 
 .howami
   font-size: 86px
+  cursor: pointer
+
+.input
+  margin: 0 (main_width/4)
+  margin-top: 30px
+  font-size: 16px
+  input
+    width: 100%
+    margin-bottom: 20px
+  button
+    margin: 0px auto
+
+.share
+  position: absolute
+  right: 10px
+  top: 130px
 
 .line-top, .line-bottom
   position: absolute
@@ -73,7 +109,10 @@ main_width=800px
   color: #FFF
   font-size: 20px
 
-.main .container
+.header form
+  height: 200px
+
+.main section
   height: 1000px
 
 #innovation

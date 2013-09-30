@@ -13,7 +13,10 @@ app.filter('filename', function() {
 });
 
 app.controller("BookCtrl", function($scope) {
-  $scope.status = void 0;
+  var updae_hash;
+  $scope.name = '';
+  $scope.editName = true;
+  $scope.share_link = location.href;
   $scope.books = [
     {
       code: 'a',
@@ -28,7 +31,7 @@ app.controller("BookCtrl", function($scope) {
       name: 'Design Thinking for Strategic Innovation',
       group: "INNOVATION"
     }, {
-      code: 'h',
+      code: 'd',
       name: 'Observing the User Experience',
       group: "UX"
     }, {
@@ -36,119 +39,169 @@ app.controller("BookCtrl", function($scope) {
       name: 'Analyzing the Social Web',
       group: "UX"
     }, {
-      code: 'e',
+      code: 'f',
       name: 'Sketching User Experiences',
       group: "UX"
     }, {
-      code: 'f',
+      code: 'g',
       name: 'This is Service Design Thinking',
       group: "UX"
     }, {
-      code: 'g',
+      code: 'h',
       name: 'The UX Book',
       group: "UX"
     }, {
-      code: 'g',
+      code: 'i',
       name: 'Writing for Interaction',
       group: "UX"
     }, {
-      code: 'g',
+      code: 'j',
       name: 'Mobile User Experience',
       fullname: 'Mobile User Experience: Patterns to Make Sense of it All',
       group: "UX"
     }, {
-      code: 'i',
+      code: 'k',
       name: 'Agile User Experience Design',
       group: "UX"
     }, {
-      code: 'j',
+      code: 'l',
       name: 'Designing the Search Experience',
       group: "UX"
     }, {
-      code: 'k',
+      code: 'm',
       name: 'Experience Design',
       fullname: 'Experience Design: A Framework for Integrating Brand, Experience, and Value',
       group: "UX"
     }, {
-      code: 'l',
+      code: 'n',
       name: 'It\'s Our Research',
       fullname: 'It\'s Our Research: Getting Stakeholder Buy-in for User Experience Research Projects',
       group: "UX"
     }, {
-      code: 'm',
+      code: 'o',
       name: 'Usability Testing Essentials',
       fullname: 'Usability Testing Essentials: Ready, Set...Test!',
       group: "UX"
     }, {
-      code: 'n',
+      code: 'p',
       name: 'Measuring the User Experience',
       fullname: 'Measuring the User Experience, Second Edition: Collecting, Analyzing, and Presenting Usability Metrics (Interactive Technologies)',
       group: "UX"
     }, {
-      code: 'o',
+      code: 'q',
       name: 'Quantifying the User Experience',
       fullname: 'Quantifying the User Experience: Practical Statistics for User Research',
       group: "UX"
     }, {
-      code: 'p',
+      code: 'r',
       name: 'User Experience Management',
       fullname: 'User Experience Management: Essential Skills for Leading Effective UX Teams',
       group: "UX"
     }, {
-      code: 'd',
+      code: 's',
       name: 'Managing Data in Motion',
       group: "INFORMATION DESIGN"
     }, {
-      code: 'd',
+      code: 't',
       name: 'Pervasive Information Architecture',
       fullname: 'Pervasive Information Architecture: Designing Cross-Channel User Experiences',
       group: "INFORMATION DESIGN"
     }, {
-      code: 'd',
+      code: 'u',
       name: 'Visualize This',
       fullname: 'Visualize This: The FlowingData Guide to Design, Visualization, and Statistics',
       group: "INFORMATION DESIGN"
     }, {
-      code: 'd',
+      code: 'v',
       name: 'A Touch of Code',
       fullname: 'A Touch of Code: Interactive Installations and Experiences',
       group: "INTERACTION DESIGN"
     }, {
-      code: 'd',
+      code: 'w',
       name: 'Human-Computer Interaction',
       fullname: 'Human-Computer Interaction: An Empirical Research Perspective',
       group: "INTERACTION DESIGN"
     }, {
-      code: 'd',
+      code: 'x',
       name: 'ART+COM',
       fullname: 'ART+COM: Media Spaces and Installations',
       group: "INTERACTION DESIGN"
     }, {
-      code: 'd',
+      code: 'y',
       name: 'Brave NUI World',
       fullname: 'Brave NUI World: Designing Natural User Interfaces for Touch and Gesture',
       group: "INTERACTION DESIGN"
     }, {
-      code: 'd',
+      code: 'z',
       name: 'UI is Communication',
       fullname: 'UI is Communication: How to Design Intuitive, User Centered Interfaces by Focusing on Effective Communication',
       group: "INTERACTION DESIGN"
     }
   ];
+  (function() {
+    var book, hash;
+    hash = location.hash.split('_');
+    book = hash[0].match(/[a-z][0-9]/gi);
+    $scope.name = hash[1] || '';
+    $scope.editName = $scope.name ? false : true;
+    return angular.forEach(book, function(value, key) {
+      var item, _i, _len, _ref, _results;
+      _ref = $scope.books;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        item = _ref[_i];
+        if (item.code === value[0]) {
+          switch (value[1]) {
+            case '1':
+              item.status = 'want';
+              break;
+            case '2':
+              item.status = 'push';
+          }
+          break;
+        } else {
+          _results.push(void 0);
+        }
+      }
+      return _results;
+    });
+  })();
+  $scope.enter = function() {
+    $scope.editName = false;
+    return location.hash = location.hash.split('_')[0] + '_' + $scope.name;
+  };
+  $scope.edit = function() {
+    return $scope.editName = true;
+  };
+  updae_hash = function(code, val) {
+    var avg, book, name, reg;
+    avg = location.hash.split('_');
+    reg = new RegExp(code + '[0-9]?', 'gi');
+    book = avg[0] || '';
+    if (book.search(reg) < 0 && val > 0) {
+      book = book + code + val;
+    }
+    book = book.replace(reg, val > 0 ? code + val : '');
+    name = avg[1] || '';
+    location.hash = book + '_' + name;
+    return $scope.share_link = location.href;
+  };
   $scope.want = function(book) {
-    console.log(book.status);
     if (book.status === 'want') {
-      return book.status = void 0;
+      book.status = void 0;
+      return updae_hash(book.code, 0);
     } else {
-      return book.status = 'want';
+      book.status = 'want';
+      return updae_hash(book.code, 1);
     }
   };
   return $scope.push = function(book) {
-    console.log(book.status);
     if (book.status === 'push') {
-      return book.status = void 0;
+      book.status = void 0;
+      return updae_hash(book.code, 0);
     } else {
-      return book.status = 'push';
+      book.status = 'push';
+      return updae_hash(book.code, 2);
     }
   };
 });
