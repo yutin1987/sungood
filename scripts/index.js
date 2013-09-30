@@ -209,12 +209,12 @@ app.controller("BookCtrl", function($scope) {
   };
   $scope.want = function(book) {
     book.is_want = !book.is_want;
-    ga('send', 'event', 'want', book.book ? 'YES' : 'NO');
+    ga('send', 'event', 'want', book.name, book.book ? 'YES' : 'NO');
     return updae_hash(book);
   };
   return $scope.push = function(book) {
     book.is_push = !book.is_push;
-    ga('send', 'event', 'push', book.is_push ? 'YES' : 'NO');
+    ga('send', 'event', 'push', book.name, book.is_push ? 'YES' : 'NO');
     return updae_hash(book);
   };
 });

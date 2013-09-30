@@ -87,12 +87,12 @@ app.controller "BookCtrl", ($scope) ->
 
   $scope.want = (book) ->
     book.is_want = !book.is_want
-    ga('send', 'event', 'want', if book.book then 'YES' else 'NO')
+    ga('send', 'event', 'want', book.name, if book.book then 'YES' else 'NO')
     updae_hash book
 
   $scope.push = (book) ->
     book.is_push = !book.is_push
-    ga('send', 'event', 'push', if book.is_push then 'YES' else 'NO')
+    ga('send', 'event', 'push', book.name, if book.is_push then 'YES' else 'NO')
     updae_hash book
 
   # (listener_width = ()->
