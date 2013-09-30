@@ -40,7 +40,7 @@ app.controller "BookCtrl", ($scope) ->
   ]
 
   (()->
-    hash = location.hash.split('_')
+    hash = decodeURIComponent(location.hash).split('_')
     book = hash[0].match(/[a-z][0-9]/gi)
     $scope.name = hash[1] || ''
     $scope.editName = if $scope.name then off else on

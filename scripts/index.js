@@ -140,7 +140,7 @@ app.controller("BookCtrl", function($scope) {
   ];
   (function() {
     var book, hash;
-    hash = location.hash.split('_');
+    hash = decodeURIComponent(location.hash).split('_');
     book = hash[0].match(/[a-z][0-9]/gi);
     $scope.name = hash[1] || '';
     $scope.editName = $scope.name ? false : true;
