@@ -70,6 +70,14 @@ app.controller "BookCtrl", ($scope) ->
   $scope.share = () ->
     ga('send', 'event', 'share', location.href)
 
+  $scope.clear = () ->
+    $scope.name = ''
+    for item in $scope.books
+      item.is_push = false
+      item.is_want = false
+    location.hash = ''
+    $scope.editName = on
+
   updae_hash = (book) ->
     code = book.code
     value = 0

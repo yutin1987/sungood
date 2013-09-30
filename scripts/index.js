@@ -186,6 +186,18 @@ app.controller("BookCtrl", function($scope) {
   $scope.share = function() {
     return ga('send', 'event', 'share', location.href);
   };
+  $scope.clear = function() {
+    var item, _i, _len, _ref;
+    $scope.name = '';
+    _ref = $scope.books;
+    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      item = _ref[_i];
+      item.is_push = false;
+      item.is_want = false;
+    }
+    location.hash = '';
+    return $scope.editName = true;
+  };
   updae_hash = function(book) {
     var avg, code, name, reg, value;
     code = book.code;
