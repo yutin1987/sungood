@@ -68,7 +68,7 @@ app.controller "BookCtrl", ($scope) ->
     book = book.replace reg, if val > 0 then code+val else ''
     name = avg[1] || ''
     location.hash = book+'_'+name
-    $scope.share_link = location.href
+    $scope.share_link = encodeURIComponent(location.href)
 
   $scope.want = (book) ->
     if book.status is 'want'

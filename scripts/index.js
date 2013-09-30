@@ -184,7 +184,7 @@ app.controller("BookCtrl", function($scope) {
     book = book.replace(reg, val > 0 ? code + val : '');
     name = avg[1] || '';
     location.hash = book + '_' + name;
-    return $scope.share_link = location.href;
+    return $scope.share_link = encodeURIComponent(location.href);
   };
   $scope.want = function(book) {
     if (book.status === 'want') {
