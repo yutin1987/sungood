@@ -70,3 +70,6 @@ html(ng-app='sungood')
               .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
+    .footer
+      .container
+        img.logo(src="./images/logo.png",border="0")
