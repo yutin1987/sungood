@@ -19,7 +19,8 @@ button:hover{background:#48c9b0}
 .line-top .box-b,.line-bottom .box-b{left:50%;border-left:1px solid #000}
 .line-top .box-a{border-top:1px solid #000}
 .line-bottom .box-a{border-bottom:1px solid #000}
-.book{width:79.2px;height:98px;background-position:center center;background-size:cover;position:absolute;left:0;top:0}
+.book{width:79.2px;height:98px;background-position:center center;background-size:cover;position:absolute;left:0;top:0;opacity:.7;}
+.book.status-want,.book.status-push{opacity:1}
 .want,.push{position:absolute;width:20px;height:20px;left:-10px;background-position:center center;background-size:cover;background-repeat:no-repeat}
 .want{top:30px;background-image:url("../images/want.png");}
 .status-want .want{background-image:url("../images/want_check.png")}
