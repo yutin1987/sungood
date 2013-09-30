@@ -72,7 +72,7 @@ html(ng-app='sungood')
             .left1.line-bottom
             .right1.line-bottom
             .main
-              .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="status-{{book.status}} {{book.name | filename}}",style="background-image: url('images/{{book.name | filename}}.jpg')")
+              .book(ng-repeat="book in books | filter:{group:'INTERACTION DESIGN'}",class="{{book.name | filename}}",ng-class="{'status-push':book.is_push, 'status-want':book.is_want}",style="background-image: url('images/{{book.name | filename}}.jpg')")
                 .want(ng-click="want(book)")
                 .push(ng-click="push(book)")
     .footer
